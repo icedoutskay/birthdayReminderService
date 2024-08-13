@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/fontawesome.css" />
+    <script defer src="./js/tailwind.js"></script>
+    <script defer src="./js/htmx.base.js"></script>
+    <script defer src="./js/extra.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+      <div
+        class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg"
+      >
+        <div class="md:flex">
+          <div class="w-full p-4">
+            <div class="text-center mb-4">
+              <h2 class="text-2xl font-bold">User Information Form</h2>
+            </div>
+            <form
+              id="user-form"
+              class="space-y-4"
+              hx-post="/"
+              hx-trigger="submit"
+              hx-target="#result"
+              hx-swap="outerHTML"
+            >
+              <div>
+                <label
+                  for="username"
+                  class="block text-sm font-medium text-gray-700"
+                  >Username</label
+                >
+                <div class="mt-1 relative rounded-md shadow-sm">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    required
+                    class="block w-full pr-10 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="Username"
+                  />
+                  <div
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                  >
+                    <i class="fas fa-user text-gray-400"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700"
+                  >Email</label
+                >
+                <div class="mt-1 relative rounded-md shadow-sm">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    class="block w-full pr-10 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    placeholder="you@example.com"
+                  />
+                  <div
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                  >
+                    <i class="fas fa-envelope text-gray-400"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="birthday"
+                  class="block text-sm font-medium text-gray-700"
+                  >Birthday</label
+                >
+                <div class="mt-1 relative rounded-md shadow-sm">
+                  <input
+                    type="date"
+                    name="birthday"
+                    id="birthday"
+                    required
+                    class="block w-full pr-10 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                  />
+                  <div
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                  >
+                    <i class="fas fa-calendar-alt text-gray-400"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+            <div id="result" class="mt-4 text-center text-gray-600"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
